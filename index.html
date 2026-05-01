@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Solar Panel Illustration</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+	<div id="sky-effects"></div>
+
+	<div class="control">
+		<h1 class="panel-title">Environmental Time-Scribe</h1>
+		<div class="slider-wrapper">
+            <span class="icon moon">🌙</span>
+			<input type="range" id="time-slider" min="0" max="100" value="25" class="modern-slider">
+            <span class="icon sun-icon">☀️</span>
+		</div>
+        <div class="helper-text">Scrub to control the day cycle</div>
+        <button id="autoplay-btn" class="btn secondary-btn">▶ Auto-Cycle</button>
+	</div>
+
+	<div class="enviroment">
+		<div class="sun"></div>
+	</div>
+	<div class="container">
+		<div class="ground">
+			<div class="solar"></div>
+			<div class="fan">
+				<div class="blade"></div>
+				<div class="cover"></div>
+				<div class="stand"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

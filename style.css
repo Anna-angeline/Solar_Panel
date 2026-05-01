@@ -1,0 +1,424 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Outfit', sans-serif;
+}
+
+body {
+	overflow: hidden;
+	background: var(--sky-color, #99ffdd);
+	transition: background 0.1s linear;
+}
+
+#sky-effects {
+	position: absolute;
+	width: 100%;
+	height: 60%;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.cloud {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 100px;
+	filter: blur(15px);
+	animation: drift linear infinite;
+}
+
+.star {
+	position: absolute;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 0 5px #fff;
+	animation: twinkle ease-in-out infinite;
+	opacity: 0;
+}
+
+@keyframes drift {
+	from {
+		transform: translateX(-200px);
+	}
+
+	to {
+		transform: translateX(110vw);
+	}
+}
+
+@keyframes twinkle {
+
+	0%,
+	100% {
+		opacity: 0.3;
+		transform: scale(0.8);
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+}
+
+/* Control Panel with Glassmorphism */
+.control {
+	position: absolute;
+	z-index: 100;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, 0.25);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-radius: 20px;
+	padding: 20px 40px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	text-align: center;
+	transition: all 0.3s ease;
+}
+
+.control:hover {
+	background: rgba(255, 255, 255, 0.35);
+	transform: translateX(-50%) translateY(-5px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.panel-title {
+	color: #222;
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+	font-weight: 600;
+	text-shadow: 0px 2px 5px rgba(255, 255, 255, 0.8);
+	letter-spacing: 1px;
+}
+
+.button-group {
+	display: flex;
+	gap: 20px;
+}
+
+.btn {
+	border: none;
+	border-radius: 30px;
+	width: 130px;
+	height: 50px;
+	color: #fff;
+	font-weight: 600;
+	font-size: 1.05rem;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.btn::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+	transform: skewX(-25deg);
+	transition: all 0.5s ease;
+}
+
+.btn:hover::after {
+	left: 150%;
+}
+
+.btn:hover {
+	transform: translateY(-4px) scale(1.05);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+	transform: translateY(0) scale(0.98);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button1 {
+	background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+.button2 {
+	background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+	color: #444;
+}
+
+.button3 {
+	background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+.button4 {
+	background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+}
+
+.slider-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 10px;
+}
+
+.icon {
+	font-size: 1.5rem;
+}
+
+/* Custom Luxury Slider Styling */
+.modern-slider {
+	-webkit-appearance: none;
+	width: 300px;
+	height: 6px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	outline: none;
+	transition: background 0.3s;
+}
+
+.modern-slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 24px;
+	height: 24px;
+	background: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	border: 3px solid #0072ff;
+}
+
+.helper-text {
+	font-size: 0.8rem;
+	color: #666;
+	margin-bottom: 20px;
+	opacity: 0.7;
+}
+
+.secondary-btn {
+	width: 160px !important;
+	background: #444 !important;
+	font-size: 0.9rem !important;
+}
+
+.ground {
+	position: absolute;
+	background: url(images/ground.png);
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.solar {
+	position: absolute;
+	background: url(images/solar.png);
+	background-repeat: no-repeat;
+	background-size: 400px;
+	width: 100%;
+	height: 100vh;
+	background-position: right;
+}
+
+.fan {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+}
+
+.blade {
+	position: absolute;
+	background: url(images/fan.png);
+	width: 200px;
+	height: 200px;
+	left: 100px;
+	top: 170px;
+	background-size: 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 5;
+	animation: none;
+}
+
+.cover {
+	position: absolute;
+	background: url(images/cover.png);
+	width: 210px;
+	height: 210px;
+	background-size: cover;
+	top: 163px;
+	z-index: 10;
+	left: 95px;
+}
+
+.stand {
+	position: absolute;
+	background: url(images/stand.png);
+	top: 250px;
+	left: 110px;
+	width: 180px;
+	height: 310px;
+	background-size: 200px;
+	background-repeat: no-repeat;
+	z-index: 1;
+
+}
+
+.sun {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: var(--sun-y, 380px);
+	left: var(--sun-x, 1%);
+	background: var(--sun-color, #ffc000);
+	border-radius: 50%;
+	box-shadow: var(--sun-glow, 0 0 20px #ff9e00);
+	z-index: 1;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes morning {
+	0% {
+		background: #fff
+	}
+
+	100% {
+		background: #99ffdd
+	}
+}
+
+@keyframes afternoon {
+	0% {
+		background: #99ffdd
+	}
+
+	100% {
+		background: #87CEEB
+	}
+}
+
+@keyframes evening {
+	0% {
+		background: #87CEEB
+	}
+
+	100% {
+		background: #ffe680
+	}
+}
+
+@keyframes night {
+	0% {
+		background: #ffe680;
+	}
+
+	50% {
+		background: #ff9966;
+	}
+
+	100% {
+		background: url(images/night_sky.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+@keyframes sun1 {
+	0% {
+		top: 310px;
+		left: 1%;
+		background: #ffc000;
+		box-shadow: 0 0 20px #ff9e00
+	}
+
+	100% {
+		top: 200px;
+		left: 5%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red
+	}
+}
+
+@keyframes sun2 {
+	0% {
+		top: 200px;
+		left: 5%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+
+	}
+
+	100% {
+		top: 50px;
+		left: 50%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+	}
+}
+
+@keyframes sun3 {
+	0% {
+		top: 50px;
+		left: 50%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+	}
+
+	100% {
+		top: 100px;
+		left: 70%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+	}
+}
+
+@keyframes sun4 {
+	0% {
+		top: 100px;
+		left: 70%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+	}
+
+	100% {
+		top: 380px;
+		/* Hide back down */
+		left: 110%;
+		background: #ffc000;
+		box-shadow: 0 0 100px orange,
+			0 0 500px red;
+
+	}
+}
+
+/* Day/Night specific visibility for particles */
+body.day-time .star {
+	display: none;
+}
+
+body.night-time .star {
+	opacity: 1;
+}
+
+body.night-time .cloud {
+	opacity: 0.3;
+}
