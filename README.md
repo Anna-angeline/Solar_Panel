@@ -12,7 +12,7 @@ An interactive solar panel illustration that visualizes the day cycle with dynam
 
 ## 🚀 Live Demo
 
-Visit the live version: https://anna-angeline.github.io/Solar_Panel/
+Visit the live version: https://solar-panel-orcin.vercel.app/
 
 ## 📁 Project Structure
 
@@ -35,7 +35,7 @@ Solar_Panel/
 
 ## 🎮 How to Use
 
-1. Open the [live demo](https://anna-angeline.github.io/Solar_Panel/) in your browser
+1. Open the [live demo](https://solar-panel-orcin.vercel.app/) in your browser
 2. Use the slider to control the time of day (0 = Midnight, 100 = Midnight next day)
 3. Click the **Auto-Cycle** button to automatically progress through a complete day cycle
 4. Watch the sky colors and animations change in real-time
@@ -63,7 +63,9 @@ cd Solar_Panel
 
 ## 🌐 Deployment
 
-This project is deployed using GitHub Pages. The live version is automatically updated whenever changes are pushed to the main branch.
+This project is deployed using Vercel. The live version is automatically updated whenever changes are pushed to the main branch.
+
+**Live URL**: https://solar-panel-orcin.vercel.app/
 
 ## 📧 Contact & Support
 
